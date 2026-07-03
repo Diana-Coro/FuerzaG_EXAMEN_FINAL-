@@ -1,4 +1,4 @@
-package FuerzaG_1.ExamenFinal.Entity;
+package FuerzaG_1.ExamenFinal.entity;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;

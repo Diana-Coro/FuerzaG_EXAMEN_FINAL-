@@ -1,7 +1,7 @@
-package FuerzaG_1.ExamenFinal.Service;
+package FuerzaG_1.ExamenFinal.service;
 
-import FuerzaG_1.ExamenFinal.Entity.EnfermerosEntity;
-import FuerzaG_1.ExamenFinal.Repository.EnfermerosRepository;
+import FuerzaG_1.ExamenFinal.entity.EnfermerosEntity;
+import FuerzaG_1.ExamenFinal.repository.EnfermerosRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
