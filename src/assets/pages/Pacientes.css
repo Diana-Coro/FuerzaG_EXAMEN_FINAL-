@@ -1,0 +1,203 @@
+.pacientes-page {
+    min-height: 100vh;
+    background: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pacientes-panel {
+    width: 1100px;
+    background: white;
+    border: 1px solid #777;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.pacientes-header {
+    background: linear-gradient(#0d5f92, #003b60);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 12px;
+    font-size: 15px;
+    letter-spacing: 0.8px;
+}
+
+.pacientes-busqueda {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 0 15px 0;
+}
+
+.pacientes-busqueda input {
+    width: 220px;
+    padding: 8px;
+    border: 1px solid #555;
+    font-size: 13px;
+}
+
+.pacientes-busqueda button,
+.botones-panel button {
+    background: linear-gradient(#0d5f92, #003b60);
+    color: white;
+    border: 1px solid #002c47;
+    padding: 8px 22px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.pacientes-busqueda button:hover,
+.botones-panel button:hover {
+    background: linear-gradient(#1278b8, #005b90);
+}
+
+.tabla-contenedor {
+    width: 95%;
+    height: 350px;
+    margin: 0 auto;
+    overflow-y: auto;
+    border: 1px solid #555;
+    background: white;
+}
+
+.pacientes-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.pacientes-tabla th {
+    background: #003b60;
+    color: white;
+    padding: 12px;
+    border: 1px solid #222;
+    font-size: 13px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+.pacientes-tabla td {
+    height: 35px;
+    padding: 8px;
+    border: 1px solid #777;
+    text-align: center;
+    font-size: 13px;
+    color: #333;
+}
+
+.pacientes-tabla tr {
+    cursor: pointer;
+}
+
+.pacientes-tabla tr:hover {
+    background: #f1f5f9;
+}
+
+.fila-seleccionada {
+    background: #93c5fd !important;
+    font-weight: bold;
+}
+
+.botones-panel {
+    width: 95%;
+    margin: 20px auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    border: 1px solid #777;
+    background: #eeeeee;
+}
+
+/* Ajustes de Ventanas Modales */
+.modal-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-caja {
+    width: 440px;
+    background: white;
+    border: 1px solid #555;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.modal-header {
+    background: linear-gradient(#0d5f92, #003b60);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 12px;
+    font-size: 14px;
+}
+
+.modal-formulario {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-formulario label {
+    font-weight: bold;
+    color: #333;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.modal-formulario input {
+    padding: 8px;
+    border: 1px solid #666;
+    font-size: 13px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modal-formulario input:disabled {
+    background: #e2e8f0;
+    color: #64748b;
+    cursor: not-allowed;
+}
+
+.modal-botones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 22px 22px 22px;
+}
+
+.modal-botones button {
+    background: linear-gradient(#0d5f92, #003b60);
+    color: white;
+    border: 1px solid #002c47;
+    padding: 9px 24px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-botones button:hover {
+    background: linear-gradient(#1278b8, #005b90);
+}
+
+.modal-texto {
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+}

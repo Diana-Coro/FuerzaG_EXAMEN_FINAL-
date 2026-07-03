@@ -1,6 +1,6 @@
-package FuerzaG_1.ExamenFinal.Controller;
-import FuerzaG_1.ExamenFinal.Service.PacientesService;
-import FuerzaG_1.ExamenFinal.Entity.*;
+package FuerzaG_1.ExamenFinal.controller;
+import FuerzaG_1.ExamenFinal.service.PacientesService;
+import FuerzaG_1.ExamenFinal.entity.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
