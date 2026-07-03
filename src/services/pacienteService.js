@@ -1,9 +1,9 @@
 import API_URL from "../api/apiPacientes";
 
-// Nota: Asegúrate de que en tu archivo apiPacientes.js la URL termine en /pacientes
+
 
 export const listarPacientes = async () => {
-    // Corregido: Ahora sí usa la variable importada dinámicamente
+
     const respuesta = await fetch(`${API_URL}`);
     return await respuesta.json();
 };

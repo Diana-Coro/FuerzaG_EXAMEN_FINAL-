@@ -37,7 +37,7 @@ function Pacientes() {
     };
 
     useEffect(() => {
-        // Se envuelve la llamada para evitar la ejecución sincrónica inmediata que penaliza ESLint
+
         setTimeout(() => {
             cargarPacientes();
         }, 0);

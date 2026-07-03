@@ -1,7 +1,7 @@
-/* Contenedor principal de la página */
+
 .estado-page {
     min-height: 100vh;
-    background: #f1f5f9 !important; /* Fondo gris claro general */
+    background: #f1f5f9 !important;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -9,17 +9,17 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Panel central */
+
 .estado-panel {
-    width: 1000px !important; /* Ampliado para que entren las 5 columnas */
-    background: #ffffff !important; /* Fondo blanco garantizado */
+    width: 1000px !important;
+    background: #ffffff !important;
     border: 1px solid #cbd5e1 !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
     border-radius: 8px;
     overflow: hidden;
 }
 
-/* Encabezado principal azul oscuro */
+
 .estado-header {
     background: linear-gradient(#0b1a4a, #071133) !important;
     color: #ffffff !important;
@@ -30,14 +30,14 @@
     letter-spacing: 0.8px;
 }
 
-/* --- SECCIÓN DE BÚSQUEDA CORREGIDA (FONDO BLANCO) --- */
+
 .estado-busqueda {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     gap: 12px !important;
     padding: 24px !important;
-    background-color: #ffffff !important; /* Forza el fondo blanco limpio */
+    background-color: #ffffff !important;
     background: #ffffff !important;
     border-bottom: 1px solid #e2e8f0 !important;
 }
@@ -47,9 +47,9 @@
     width: 250px !important;
     padding: 10px 14px !important;
     border: 1px solid #cbd5e1 !important;
-    background-color: #ffffff !important; /* Fondo blanco */
+    background-color: #ffffff !important;
     background: #ffffff !important;
-    color: #333333 !important; /* Texto oscuro visible */
+    color: #333333 !important;
     border-radius: 6px !important;
     font-size: 14px !important;
     outline: none !important;
@@ -59,7 +59,7 @@
     color: #94a3b8 !important;
 }
 
-/* Botones de búsqueda azul oscuro */
+
 .estado-busqueda button {
     background: #0b1a4a !important;
     color: #ffffff !important;
@@ -75,7 +75,7 @@
     background: #071133 !important;
 }
 
-/* --- TABLA ORDENADA Y SEPARADA --- */
+
 .tabla-contenedor {
     width: 92% !important;
     margin: 24px auto !important;
@@ -91,7 +91,7 @@
     background: #ffffff !important;
 }
 
-/* Cabecera de la tabla con los títulos separados en cajas individuales */
+
 .estado-tabla th {
     background: #0b1a4a !important;
     color: #ffffff !important;
@@ -99,10 +99,10 @@
     font-size: 13px !important;
     font-weight: bold !important;
     text-align: center !important;
-    border: 1px solid #071133 !important; /* Bordes que separan las columnas */
+    border: 1px solid #071133 !important;
 }
 
-/* Datos de las celdas ordenados */
+
 .estado-tabla td {
     padding: 14px 10px !important;
     border: 1px solid #e2e8f0 !important; /* Bordes sutiles entre celdas */
@@ -120,11 +120,11 @@
 }
 
 .fila-seleccionada {
-    background: #fee2e2 !important; /* Selección en tono rojo suave */
+    background: #fee2e2 !important;
     font-weight: bold !important;
 }
 
-/* --- PANEL DE ACCIONES INFERIOR --- */
+
 .botones-panel {
     width: 92% !important;
     margin: 0 auto 24px auto !important;
@@ -133,7 +133,7 @@
     justify-content: center !important;
     gap: 14px !important;
     border: 1px solid #e2e8f0 !important;
-    background: #f7f7f7 !important; /* Fondo gris claro tipo formulario */
+    background: #f7f7f7 !important;
     border-radius: 6px !important;
 }
 
@@ -152,7 +152,7 @@
     background: #071133 !important;
 }
 
-/* --- ESTILOS DE LOS MODALES --- */
+
 .modal-fondo {
     position: fixed !important;
     top: 0 !important;
@@ -223,7 +223,7 @@
     background-color: #f7f7f7 !important;
 }
 
-/* Guardar en rojo corporativo */
+
 .modal-botones button[type="submit"] {
     background: #d91d36 !important;
     color: #ffffff !important;
@@ -239,7 +239,7 @@
     background: #b51227 !important;
 }
 
-/* Cancelar en azul oscuro */
+
 .modal-botones button[type="button"] {
     background: #0b1a4a !important;
     color: #ffffff !important;
