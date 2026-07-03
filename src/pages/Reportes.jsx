@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import "../css/Reportes.css";
 
 export default function Reportes() {
     const [reportes, setReportes] = useState([]);
-    const [editando, setEditando] = useState(null);
 
     const [form, setForm] = useState({
         gastos: "",
@@ -12,42 +12,48 @@ export default function Reportes() {
         tipo: "",
     });
 
+    const [editando, setEditando] = useState(null);
+
+    // LISTAR DESDE BACKEND
+    const listar = async () => {
+        const res = await axios.get("http://localhost:8080/api/reportes");
+        setReportes(res.data);
+    };
+
+    useEffect(() => {
+        listar();
+    }, []);
+
     const cambiar = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-    const guardar = (e) => {
+    // GUARDAR O ACTUALIZAR
+    const guardar = async (e) => {
         e.preventDefault();
 
-        if (!form.gastos || !form.mes || !form.ingresos || !form.tipo) {
-            alert("Completa todos los campos");
-            return;
-        }
-
         if (editando) {
-            setReportes(
-                reportes.map((r) =>
-                    r.id === editando ? { ...form, id: editando } : r
-                )
+            await axios.put(
+                `http://localhost:8080/api/reportes/${editando}`,
+                form
             );
             setEditando(null);
         } else {
-            setReportes([...reportes, { id: Date.now(), ...form }]);
+            await axios.post("http://localhost:8080/api/reportes", form);
         }
 
         setForm({ gastos: "", mes: "", ingresos: "", tipo: "" });
+        listar();
     };
 
-    const editar = (reporte) => {
-        setForm(reporte);
-        setEditando(reporte.id);
+    const editar = (r) => {
+        setForm(r);
+        setEditando(r.id);
     };
 
-    const eliminar = (id) => {
-        const confirmar = confirm("¿Seguro que deseas eliminar este reporte?");
-        if (confirmar) {
-            setReportes(reportes.filter((r) => r.id !== id));
-        }
+    const eliminar = async (id) => {
+        await axios.delete(`http://localhost:8080/api/reportes/${id}`);
+        listar();
     };
 
     return (
@@ -55,46 +61,12 @@ export default function Reportes() {
             <h1>Registro de Reportes</h1>
 
             <form className="formulario" onSubmit={guardar}>
-                <input
-                    type="number"
-                    name="gastos"
-                    placeholder="Gastos"
-                    value={form.gastos}
-                    onChange={cambiar}
-                />
+                <input name="gastos" value={form.gastos} onChange={cambiar} placeholder="Gastos" />
+                <input name="mes" value={form.mes} onChange={cambiar} placeholder="Mes" />
+                <input name="ingresos" value={form.ingresos} onChange={cambiar} placeholder="Ingresos" />
+                <input name="tipo" value={form.tipo} onChange={cambiar} placeholder="Tipo" />
 
-                <select name="mes" value={form.mes} onChange={cambiar}>
-                    <option value="">Seleccione mes</option>
-                    <option value="Enero">Enero</option>
-                    <option value="Febrero">Febrero</option>
-                    <option value="Marzo">Marzo</option>
-                    <option value="Abril">Abril</option>
-                    <option value="Mayo">Mayo</option>
-                    <option value="Junio">Junio</option>
-                    <option value="Julio">Julio</option>
-                    <option value="Agosto">Agosto</option>
-                    <option value="Septiembre">Septiembre</option>
-                    <option value="Octubre">Octubre</option>
-                    <option value="Noviembre">Noviembre</option>
-                    <option value="Diciembre">Diciembre</option>
-                </select>
-
-                <input
-                    type="number"
-                    name="ingresos"
-                    placeholder="Ingresos"
-                    value={form.ingresos}
-                    onChange={cambiar}
-                />
-
-                <select name="tipo" value={form.tipo} onChange={cambiar}>
-                    <option value="">Tipo de reporte</option>
-                    <option value="Mensual">Mensual</option>
-                    <option value="Semanal">Semanal</option>
-                    <option value="Anual">Anual</option>
-                </select>
-
-                <button className="btnGuardar" type="submit">
+                <button className="btnGuardar">
                     {editando ? "Actualizar" : "Guardar"}
                 </button>
             </form>
@@ -111,17 +83,17 @@ export default function Reportes() {
                 </thead>
 
                 <tbody>
-                {reportes.map((reporte) => (
-                    <tr key={reporte.id}>
-                        <td>{reporte.gastos} Bs</td>
-                        <td>{reporte.mes}</td>
-                        <td>{reporte.ingresos} Bs</td>
-                        <td>{reporte.tipo}</td>
+                {reportes.map((r) => (
+                    <tr key={r.id}>
+                        <td>{r.gastos}</td>
+                        <td>{r.mes}</td>
+                        <td>{r.ingresos}</td>
+                        <td>{r.tipo}</td>
                         <td>
-                            <button className="btnEditar" onClick={() => editar(reporte)}>
+                            <button className="btnEditar" onClick={() => editar(r)}>
                                 Editar
                             </button>
-                            <button className="btnEliminar" onClick={() => eliminar(reporte.id)}>
+                            <button className="btnEliminar" onClick={() => eliminar(r.id)}>
                                 Eliminar
                             </button>
                         </td>

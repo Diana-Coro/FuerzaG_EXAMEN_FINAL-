@@ -1,26 +1,31 @@
 body{
     margin:0;
     padding:0;
-    background:#f5f7fb;
     font-family:Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #1a0000, #4d0000, #ff1a1a);
+    min-height: 100vh;
 }
 
 .contenedor{
     width:90%;
     max-width:1100px;
     margin:40px auto;
-    background:white;
+    background: rgba(255,255,255,0.95);
     padding:30px;
-    border-radius:15px;
-    box-shadow:0px 5px 20px rgba(0,0,0,.2);
+    border-radius:18px;
+    box-shadow:0px 10px 30px rgba(0,0,0,.4);
+    backdrop-filter: blur(5px);
 }
 
 h1{
     text-align:center;
-    color:#1e3a8a;
+    color:#b30000;
     margin-bottom:30px;
+    font-size:32px;
+    letter-spacing:1px;
 }
 
+/* FORMULARIO */
 .formulario{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -31,68 +36,85 @@ h1{
 .formulario input,
 .formulario select{
     padding:12px;
-    border:1px solid #ccc;
-    border-radius:8px;
+    border:1px solid #ff4d4d;
+    border-radius:10px;
     font-size:15px;
+    outline:none;
+    transition:0.3s;
 }
 
+.formulario input:focus{
+    border-color:#ff0000;
+    box-shadow:0 0 8px rgba(255,0,0,0.4);
+}
+
+/* BOTÓN GUARDAR */
 .btnGuardar{
-    background:#2563eb;
+    background: linear-gradient(135deg, #ff0000, #800000);
     color:white;
     border:none;
-    border-radius:8px;
+    border-radius:10px;
     cursor:pointer;
     font-size:15px;
     transition:.3s;
 }
 
 .btnGuardar:hover{
-    background:#1d4ed8;
+    transform: scale(1.05);
+    box-shadow:0px 5px 15px rgba(255,0,0,0.4);
 }
 
+/* TABLA */
 table{
     width:100%;
     border-collapse:collapse;
+    border-radius:10px;
+    overflow:hidden;
 }
 
 thead{
-    background:#2563eb;
+    background: linear-gradient(135deg, #b30000, #ff1a1a);
     color:white;
 }
 
 th,td{
     padding:12px;
     text-align:center;
-    border:1px solid #ddd;
+    border:1px solid #eee;
 }
 
 tbody tr:nth-child(even){
-    background:#f9fafb;
+    background:#fff5f5;
 }
 
+tbody tr:hover{
+    background:#ffe6e6;
+}
+
+/* BOTONES */
 .btnEditar{
-    background:#16a34a;
+    background: linear-gradient(135deg, #ff9900, #cc7a00);
     color:white;
     border:none;
     padding:8px 12px;
-    border-radius:6px;
+    border-radius:8px;
     cursor:pointer;
     margin-right:8px;
+    transition:0.3s;
 }
 
 .btnEliminar{
-    background:#dc2626;
+    background: linear-gradient(135deg, #ff1a1a, #800000);
     color:white;
     border:none;
     padding:8px 12px;
-    border-radius:6px;
+    border-radius:8px;
     cursor:pointer;
+    transition:0.3s;
 }
 
-.btnEditar:hover{
-    background:#15803d;
-}
-
+.btnEditar:hover,
 .btnEliminar:hover{
-    background:#b91c1c;
+    transform: scale(1.1);
+    box-shadow:0px 5px 12px rgba(0,0,0,0.3);
 }
