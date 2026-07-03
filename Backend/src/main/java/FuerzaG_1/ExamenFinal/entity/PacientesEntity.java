@@ -1,30 +1,30 @@
-package FuerzaG_1.ExamenFinal.Entity;
+package FuerzaG_1.ExamenFinal.entity;
 
-import io.swagger.v3.oas.annotations.media.Schema;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 @Entity
-@Table(name = "Pacientes")
+@Table(name = "pacientes")
 public class PacientesEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Schema(hidden = true)
     private Integer ci;
 
     private String nombre;
 
     @Temporal(TemporalType.DATE)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate fechaNacimiento;
+
 
     private String diagnostico;
 
-    private String numeroReferencia;
+    private Integer numeroReferencia;
 
     public PacientesEntity() {
     }
 
-    public PacientesEntity(Integer ci, String nombre, LocalDate fechaNacimiento, String diagnostico, String numeroReferencia) {
+    public PacientesEntity(Integer ci, String nombre, LocalDate fechaNacimiento, String diagnostico, Integer numeroReferencia) {
         this.ci = ci;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
@@ -64,11 +64,11 @@ public class PacientesEntity {
         this.diagnostico = diagnostico;
     }
 
-    public String getNumeroReferencia() {
+    public Integer getNumeroReferencia() {
         return numeroReferencia;
     }
 
-    public void setNumeroReferencia(String numeroReferencia) {
+    public void setNumeroReferencia(Integer numeroReferencia) {
         this.numeroReferencia = numeroReferencia;
     }
 }

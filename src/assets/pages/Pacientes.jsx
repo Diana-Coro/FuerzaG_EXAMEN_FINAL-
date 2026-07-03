@@ -5,7 +5,7 @@ import {
     guardarPaciente,
     actualizarPaciente,
     eliminarPaciente,
-} from "../../services/pacienteService";
+} from "../../services/pacienteService.js";
 
 import "./Pacientes.css";
 
@@ -292,10 +292,11 @@ function Pacientes() {
 
                             <label>Fecha de nacimiento:</label>
                             <input
-                                type="date"
+                                type="date" // <- ESTO ES LO ÚNICO QUE DEBES CAMBIAR (ponle "date" en lugar de "text")
                                 value={fechaNacimiento}
                                 onChange={(e) => setFechaNacimiento(e.target.value)}
                             />
+
 
                             <label>Diagnóstico:</label>
                             <input

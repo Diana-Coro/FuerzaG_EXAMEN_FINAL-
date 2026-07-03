@@ -1,5 +1,5 @@
-package FuerzaG_1.ExamenFinal.Repository;
-import FuerzaG_1.ExamenFinal.Entity.PacientesEntity;
+package FuerzaG_1.ExamenFinal.repository;
+import FuerzaG_1.ExamenFinal.entity.PacientesEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
