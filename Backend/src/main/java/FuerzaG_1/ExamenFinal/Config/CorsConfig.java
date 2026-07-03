@@ -1,4 +1,4 @@
-package com.fuerzag1.examenfinal.config;
+package FuerzaG_1.ExamenFinal.Config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

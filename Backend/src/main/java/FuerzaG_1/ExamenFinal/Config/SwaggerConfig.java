@@ -1,4 +1,5 @@
-package com.example.vSIAF.Config;
+package FuerzaG_1.ExamenFinal.Config;
+
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
